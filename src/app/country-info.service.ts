@@ -10,8 +10,8 @@ export class CountryInfoService {
   constructor(private http: HttpClient) { }
   getWorldBankInfo(countryCode: string): Observable<any> {
 
-    const url = `https://api.worldbank.org/v2/country/${countryCode}`;
+    const url = `https://api.worldbank.org/v2/country/au?format=json`;
     return this.http.get(url);
-
+  
    }
 }
