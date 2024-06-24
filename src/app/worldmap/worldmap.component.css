@@ -1,0 +1,15 @@
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.world-map{
+    width: 1200px;
+}
+
+.country-card{
+    width: 400px;
+}
