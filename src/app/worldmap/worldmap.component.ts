@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { isPlatformBrowser } from '@angular/common';
+
 
 @Component({
   selector: 'app-worldmap',
@@ -11,13 +13,15 @@ import { HttpClient } from '@angular/common/http';
 })
 export class WorldmapComponent {
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, @Inject(PLATFORM_ID) private platformId: Object){}
+
   loadCountryData(svgCountry: SVGPathElement): Observable<any> {
     let api: string = `https://api.worldbank.org/V2/country/${svgCountry.id}?format=json`;
     return this.http.get(api); // Use HttpClient to get the Observable
   }
 
   ngOnInit(): void {
+    if (isPlatformBrowser(this.platformId)) {  // TO preform DOM maniuplation
     let svgCountryPaths = document.querySelectorAll<SVGPathElement>('path');
 
     Array.prototype.forEach.call(svgCountryPaths, (svgCountry: SVGPathElement) => {
@@ -61,6 +65,7 @@ export class WorldmapComponent {
       });
       
     });
+    }
   }
 
 }
