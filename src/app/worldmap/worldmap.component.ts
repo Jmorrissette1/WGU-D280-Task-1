@@ -55,7 +55,7 @@ export class WorldmapComponent {
       // Change color of country when selected
       svgCountry.addEventListener('mouseover', (event:MouseEvent)=> {
         const path = event.target as SVGPathElement;
-        path.style.fill = '#9a1115'; // Citadel Mephiston Red Hex for warhammer 40k fans :)
+        path.style.fill = '#881e36'; 
       });
 
       // Revert to base color

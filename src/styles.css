@@ -1,1 +1,32 @@
 /* You can add global styles to this file, and also import other style files */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+*{
+  font-family: "Prompt", sans-serif;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+
+.header{
+    background-color: #0C0715;
+    margin-bottom: 4rem;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+
+h1{
+   text-transform: uppercase;
+    color: #fff;
+}
