@@ -94,6 +94,14 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@netlify-builder/deploy:deploy",
+          "options": {
+            "outputPath": "dist/wgu-d280-task-1",
+            "netlifyToken": "",
+            "siteId": ""
+          }
         }
       }
     }
